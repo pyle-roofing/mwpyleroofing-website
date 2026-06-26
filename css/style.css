@@ -1,0 +1,241 @@
+/* ===== M.W. Pyle Roofing — Design Tokens ===== */
+:root{
+  --charcoal:#1B2430;
+  --slate:#3D4A5C;
+  --clay:#C1502E;
+  --clay-dark:#9E3E22;
+  --cream:#F6F2EA;
+  --stone:#7C7468;
+  --white:#FFFFFF;
+  --line:#E2DACB;
+  --radius:2px;
+  --container:1140px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--charcoal);
+  font-family:'Inter',Arial,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+}
+h1,h2,h3,h4{
+  font-family:'Archivo',Arial,sans-serif;
+  font-weight:800;
+  letter-spacing:-0.01em;
+  line-height:1.15;
+  margin:0 0 .5em;
+  color:var(--charcoal);
+}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);}
+h2{font-size:clamp(1.6rem,3vw,2.3rem);}
+h3{font-size:1.2rem;}
+p{margin:0 0 1em;}
+a{color:var(--clay);text-decoration:none;}
+a:hover{text-decoration:underline;}
+img{max-width:100%;display:block;}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px;}
+:focus-visible{outline:3px solid var(--clay);outline-offset:2px;}
+
+/* ===== Tile-lap divider — signature motif ===== */
+.tile-lap{
+  height:18px;
+  width:100%;
+  background-image:repeating-linear-gradient(
+    -35deg,
+    var(--clay) 0 22px,
+    var(--clay-dark) 22px 24px
+  );
+  clip-path: polygon(0 0,100% 0,100% 60%,95% 100%,90% 60%,85% 100%,80% 60%,75% 100%,70% 60%,65% 100%,60% 60%,55% 100%,50% 60%,45% 100%,40% 60%,35% 100%,30% 60%,25% 100%,20% 60%,15% 100%,10% 60%,5% 100%,0 60%);
+}
+
+/* ===== Top utility bar ===== */
+.topbar{
+  background:var(--charcoal);
+  color:var(--cream);
+  font-size:.85rem;
+}
+.topbar .container{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:8px;padding-bottom:8px;flex-wrap:wrap;gap:8px;
+}
+.topbar a{color:var(--cream);}
+.topbar .social a{margin-left:14px;}
+
+/* ===== Header / Nav ===== */
+header.site-header{
+  background:var(--cream);
+  border-bottom:3px solid var(--charcoal);
+  position:sticky;top:0;z-index:50;
+}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand img{height:46px;width:auto;}
+.brand-text{font-family:'Archivo',Arial,sans-serif;font-weight:800;font-size:1.15rem;color:var(--charcoal);line-height:1.1;}
+.brand-text span{display:block;font-family:'Inter',Arial,sans-serif;font-weight:500;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--clay);}
+
+nav.main-nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;}
+nav.main-nav a{
+  color:var(--charcoal);font-weight:700;font-size:.95rem;
+  text-decoration:none;padding:6px 2px;border-bottom:3px solid transparent;
+}
+nav.main-nav a:hover,
+nav.main-nav a[aria-current="page"]{border-bottom-color:var(--clay);text-decoration:none;}
+
+.nav-cta{
+  background:var(--clay);color:var(--white);font-weight:700;
+  padding:10px 20px;border-radius:var(--radius);font-size:.92rem;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--clay-dark);text-decoration:none;}
+
+.menu-toggle{display:none;background:none;border:2px solid var(--charcoal);border-radius:var(--radius);padding:8px 12px;font-weight:700;cursor:pointer;}
+
+@media (max-width:860px){
+  nav.main-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:var(--cream);border-bottom:3px solid var(--charcoal);
+  }
+  nav.main-nav.open{display:block;}
+  nav.main-nav ul{flex-direction:column;gap:0;padding:8px 24px 16px;}
+  nav.main-nav li{border-top:1px solid var(--line);}
+  nav.main-nav a{display:block;padding:14px 0;}
+  .menu-toggle{display:inline-block;}
+  .nav-cta{display:none;}
+}
+
+/* ===== Hero ===== */
+.hero{
+  background:linear-gradient(180deg,rgba(27,36,48,.78),rgba(27,36,48,.62)),
+    url('https://mwpyleroofing.co.uk/wp-content/uploads/2026/06/IMG_0256.jpeg') center/cover no-repeat;
+  color:var(--white);
+  padding:100px 0 90px;
+}
+.hero .container{max-width:760px;}
+.hero p.lead{font-size:1.2rem;color:#E7E1D3;}
+.hero .btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;}
+
+.btn{
+  display:inline-block;padding:14px 28px;font-weight:700;border-radius:var(--radius);
+  font-size:1rem;text-decoration:none;
+}
+.btn-clay{background:var(--clay);color:var(--white);}
+.btn-clay:hover{background:var(--clay-dark);text-decoration:none;}
+.btn-outline{background:transparent;color:var(--white);border:2px solid var(--white);}
+.btn-outline:hover{background:var(--white);color:var(--charcoal);text-decoration:none;}
+
+/* ===== Page header (non-home) ===== */
+.page-header{
+  background:var(--charcoal);color:var(--cream);padding:64px 0 50px;
+}
+.page-header p{color:#C9C2B3;max-width:640px;font-size:1.1rem;}
+.breadcrumb{font-size:.85rem;color:var(--clay);margin-bottom:10px;}
+.breadcrumb a{color:#C9C2B3;}
+
+/* ===== Sections ===== */
+section{padding:72px 0;}
+section.tight{padding:48px 0;}
+.section-eyebrow{
+  text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;
+  font-weight:700;color:var(--clay);margin-bottom:10px;display:block;
+}
+.bg-charcoal{background:var(--charcoal);color:var(--cream);}
+.bg-charcoal h2,.bg-charcoal h3{color:var(--white);}
+.bg-slate{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+/* ===== Trust grid ===== */
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+.trust-card{background:var(--white);border:1px solid var(--line);padding:26px;border-radius:var(--radius);}
+.trust-card h3{margin-bottom:8px;font-size:1.05rem;}
+.trust-card p{color:var(--stone);font-size:.95rem;margin:0;}
+@media (max-width:860px){.trust-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.trust-grid{grid-template-columns:1fr;}}
+
+/* ===== Two-col layout ===== */
+.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+@media (max-width:860px){.two-col{grid-template-columns:1fr;}}
+
+/* ===== Gallery ===== */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.gallery-grid figure{margin:0;overflow:hidden;border-radius:var(--radius);position:relative;}
+.gallery-grid img{width:100%;height:280px;object-fit:cover;transition:transform .4s ease;}
+.gallery-grid figure:hover img{transform:scale(1.06);}
+.gallery-grid figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:10px 14px;
+  background:linear-gradient(180deg,transparent,rgba(27,36,48,.88));
+  color:var(--white);font-size:.85rem;font-weight:600;
+}
+@media (max-width:860px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.gallery-grid{grid-template-columns:1fr;}}
+
+/* ===== Services ===== */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.service-card{
+  background:var(--white);border:1px solid var(--line);border-left:5px solid var(--clay);
+  padding:26px 28px;border-radius:var(--radius);
+}
+.service-card h3{margin-bottom:8px;}
+.service-card p{color:var(--stone);margin:0;font-size:.96rem;}
+@media (max-width:760px){.services-grid{grid-template-columns:1fr;}}
+
+/* ===== Areas served chips ===== */
+.chip-row{display:flex;flex-wrap:wrap;gap:10px;}
+.chip{background:var(--white);border:1px solid var(--line);padding:8px 16px;border-radius:30px;font-size:.88rem;font-weight:600;}
+
+/* ===== CTA band ===== */
+.cta-band{background:var(--clay);color:var(--white);text-align:center;padding:56px 0;}
+.cta-band h2{color:var(--white);}
+.cta-band .btn-outline{border-color:var(--white);}
+
+/* ===== Contact form ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+.contact-info-card{background:var(--charcoal);color:var(--cream);padding:32px;border-radius:var(--radius);}
+.contact-info-card a{color:var(--cream);}
+.contact-info-card .row{display:flex;gap:12px;margin-bottom:18px;align-items:flex-start;}
+.contact-info-card .row strong{display:block;color:var(--white);}
+
+form.contact-form{display:flex;flex-direction:column;gap:16px;}
+.contact-form label{font-weight:700;font-size:.9rem;display:block;margin-bottom:6px;}
+.contact-form input,.contact-form select,.contact-form textarea{
+  width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--radius);
+  font-family:'Inter',Arial,sans-serif;font-size:1rem;background:var(--white);color:var(--charcoal);
+}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{
+  border-color:var(--clay);outline:none;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media (max-width:560px){.form-row{grid-template-columns:1fr;}}
+.hp-field{position:absolute;left:-9999px;}
+.form-status{padding:14px 16px;border-radius:var(--radius);font-weight:600;display:none;}
+.form-status.success{display:block;background:#E4EFE4;color:#2C6B2C;border:1px solid #B6D8B6;}
+.form-status.error{display:block;background:#F7E2DC;color:var(--clay-dark);border:1px solid #E3B6A6;}
+.submit-btn{
+  background:var(--clay);color:var(--white);font-weight:700;border:none;padding:15px 28px;
+  border-radius:var(--radius);font-size:1.02rem;cursor:pointer;
+}
+.submit-btn:hover{background:var(--clay-dark);}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;}
+
+/* ===== FAQ ===== */
+.faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
+.faq-item h3{margin-bottom:6px;font-size:1.05rem;}
+.faq-item p{color:var(--stone);margin:0;}
+
+/* ===== Blog teaser ===== */
+.blog-card{background:var(--white);border:1px solid var(--line);padding:24px;border-radius:var(--radius);}
+.blog-meta{font-size:.8rem;color:var(--stone);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+
+/* ===== Footer ===== */
+footer.site-footer{background:var(--charcoal);color:#C9C2B3;padding:56px 0 28px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:36px;}
+footer.site-footer h4{color:var(--white);font-size:1rem;}
+footer.site-footer a{color:#C9C2B3;}
+footer.site-footer ul{list-style:none;padding:0;margin:0;}
+footer.site-footer li{margin-bottom:10px;}
+.footer-bottom{border-top:1px solid #34404F;padding-top:20px;font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr;}}
+
+.visually-hidden{position:absolute;left:-9999px;}
