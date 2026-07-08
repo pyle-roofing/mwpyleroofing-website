@@ -4,5 +4,21 @@
   <url><loc>https://www.mwpyleroofing.co.uk/about.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.mwpyleroofing.co.uk/our-work.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.mwpyleroofing.co.uk/services.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/areas.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/blog.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.mwpyleroofing.co.uk/contact.html</loc><priority>0.9</priority></url>
+  <!-- Area pages -->
+  <url><loc>https://www.mwpyleroofing.co.uk/areas-areas-roofing-eastbourne.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/areas-areas-roofing-hastings.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/areas-areas-roofing-bexhill.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/areas-areas-roofing-lewes.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/areas-areas-roofing-brighton.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/areas-areas-roofing-hailsham.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/areas-areas-roofing-polegate.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/areas-areas-roofing-pevensey.html</loc><priority>0.9</priority></url>
+  <!-- Blog posts -->
+  <url><loc>https://www.mwpyleroofing.co.uk/blog-blog-signs-roof-needs-replacing.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/blog-blog-storm-damage-roofing-east-sussex.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/blog-blog-roof-maintenance-coastal-homes.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.mwpyleroofing.co.uk/blog-blog-how-to-choose-roofer-eastbourne.html</loc><priority>0.8</priority></url>
 </urlset>

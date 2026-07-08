@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MW Pyle Roofing — Ad Graphics</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #111;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.label {
+  color: #888;
+  font-size: 11px;
+  font-family: monospace;
+  text-align: center;
+  padding: 4px 0;
+}
+.hint {
+  color: #5BB8AE;
+  font-size: 11px;
+  text-align: center;
+  padding: 8px 16px;
+  font-family: monospace;
+}
+
+/* ===================================================
+   LANDSCAPE AD — matches the split-panel style exactly
+   Uses 100vw so it fills the phone screen width
+   Screenshot in portrait mode — the full ad is visible
+   =================================================== */
+
+.ad {
+  width: 100vw;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+/* LEFT PANEL */
+.left {
+  width: 45%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5% 5% 5% 6%;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+/* Dashed line decoration — left edge, exactly like the original */
+.left::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 8%;
+  bottom: 8%;
+  width: 1px;
+  border-left: 1.5px dashed rgba(255,255,255,0.35);
+  z-index: 3;
+}
+
+/* Diagonal cut on right edge of left panel */
+.left::after {
+  content: '';
+  position: absolute;
+  top: 0; right: -30px; bottom: 0;
+  width: 60px;
+  z-index: 4;
+}
+
+/* RIGHT PANEL — photo */
+.right {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* company name */
+.co-name {
+  font-size: clamp(12px, 2.8vw, 22px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #5BB8AE;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.co-icon {
+  font-size: clamp(8px, 1.6vw, 14px);
+  margin-bottom: 2px;
+  opacity: 0.7;
+}
+
+.main-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4% 0;
+}
+.headline {
+  font-size: clamp(10px, 2.2vw, 18px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 3%;
+}
+.subtext {
+  font-size: clamp(8px, 1.6vw, 13px);
+  font-weight: 600;
+  color: rgba(168,221,216,0.9);
+  line-height: 1.5;
+}
+
+.url-bar {
+  font-size: clamp(7px, 1.4vw, 11px);
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+}
+
+/* Divider line */
+.divider {
+  width: 30%;
+  height: 1px;
+  background: rgba(91,184,174,0.4);
+  margin: 3% 0;
+}
+
+/* Phone number styling */
+.phone {
+  font-size: clamp(11px, 2.4vw, 20px);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 1%;
+}
+.phone-lbl {
+  font-size: clamp(7px, 1.3vw, 10px);
+  font-weight: 700;
+  color: #5BB8AE;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1%;
+}
+
+/* Bullet list */
+.bullets { list-style: none; display: flex; flex-direction: column; gap: 2%; }
+.bullets li {
+  font-size: clamp(7px, 1.5vw, 12px);
+  font-weight: 600;
+  color: rgba(168,221,216,0.9);
+  display: flex;
+  align-items: flex-start;
+  gap: 4%;
+  line-height: 1.3;
+}
+.bullets li::before { content: '✓'; color: #5BB8AE; font-weight: 900; flex-shrink: 0; }
+
+/* Badge over photo */
+.badge {
+  position: absolute;
+  bottom: 8%;
+  right: 6%;
+  background: rgba(44,72,72,0.88);
+  border: 1.5px solid #5BB8AE;
+  border-radius: 3px;
+  padding: 3% 4%;
+  text-align: center;
+  z-index: 3;
+}
+.badge-num { color: #5BB8AE; font-size: clamp(14px, 3vw, 26px); font-weight: 900; line-height: 1; }
+.badge-txt { color: #fff; font-size: clamp(6px, 1.1vw, 9px); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; line-height: 1.3; }
+
+/* Photo overlay gradient — subtle dark on left to blend into left panel */
+.right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(44,72,72,0.55) 0%, rgba(44,72,72,0) 40%);
+  z-index: 1;
+}
+
+/* ===== Individual ad colour themes ===== */
+.ad1 .left { background: rgba(44,72,72,0.93); }
+.ad1 .right { background-image: url('https://mwpyleroofing.co.uk/wp-content/uploads/2024/11/IMG_0239.jpeg'); }
+
+.ad2 .left { background: rgba(30,53,53,0.96); }
+.ad2 .right { background-image: url('https://mwpyleroofing.co.uk/wp-content/uploads/2024/11/IMG_0254.jpeg'); }
+
+.ad3 .left { background: rgba(44,72,72,0.93); }
+.ad3 .right { background-image: url('https://mwpyleroofing.co.uk/wp-content/uploads/2024/11/PHOTO-2024-03-19-14-04-18.jpeg'); }
+
+.ad4 .left { background: rgba(30,53,53,0.96); }
+.ad4 .right { background-image: url('https://mwpyleroofing.co.uk/wp-content/uploads/2024/11/IMG_3997.jpeg'); }
+</style>
+</head>
+<body>
+
+<div class="hint">Rotate your phone sideways to see full ads<br>or screenshot in portrait — both work fine</div>
+
+<div class="label">AD 1 — General business</div>
+<div class="ad ad1">
+  <div class="left">
+    <div>
+      <div class="co-icon">🏠</div>
+      <div class="co-name">M.W.Pyle Roofing</div>
+    </div>
+    <div class="main-text">
+      <div class="headline">Quality roofing services<br>for over 40 trading years.</div>
+      <div class="divider"></div>
+      <ul class="bullets">
+        <li>Fully insured for your peace of mind</li>
+        <li>Free inspections &amp; written quotations</li>
+        <li>Eastbourne &amp; across East Sussex</li>
+      </ul>
+    </div>
+    <div>
+      <div class="phone-lbl">Call us today</div>
+      <div class="phone">01323 767955</div>
+      <div class="url-bar">www.mwpyleroofing.co.uk</div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="badge">
+      <div class="badge-num">40+</div>
+      <div class="badge-txt">Years in<br>the trade</div>
+    </div>
+  </div>
+</div>
+
+<div class="label">AD 2 — Free inspection</div>
+<div class="ad ad2">
+  <div class="left">
+    <div>
+      <div class="co-icon">🏠</div>
+      <div class="co-name">M.W.Pyle Roofing</div>
+    </div>
+    <div class="main-text">
+      <div class="headline">Is your roof in need<br>of an inspection?</div>
+      <div class="divider"></div>
+      <div class="subtext">We offer completely free roof<br>inspections and quotations<br>with no obligation whatsoever.</div>
+    </div>
+    <div>
+      <div class="subtext" style="color:rgba(255,255,255,0.8);margin-bottom:2%;">Book your free inspection today.</div>
+      <div class="phone">01323 767955</div>
+      <div class="url-bar">www.mwpyleroofing.co.uk</div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="badge">
+      <div class="badge-num">FREE</div>
+      <div class="badge-txt">No obligation<br>quotations</div>
+    </div>
+  </div>
+</div>
+
+<div class="label">AD 3 — Roof cleaning &amp; moss treatment</div>
+<div class="ad ad3">
+  <div class="left">
+    <div>
+      <div class="co-icon">🏠</div>
+      <div class="co-name">M.W.Pyle Roofing</div>
+    </div>
+    <div class="main-text">
+      <div class="headline">Roof cleaning done<br>the right way.</div>
+      <div class="divider"></div>
+      <ul class="bullets">
+        <li>Hand cleaned — never jet washed</li>
+        <li>Professional biocidal treatment</li>
+        <li>Copper strips to stop moss returning</li>
+      </ul>
+    </div>
+    <div>
+      <div class="phone-lbl">Get a free quote</div>
+      <div class="phone">01323 767955</div>
+      <div class="url-bar">www.mwpyleroofing.co.uk</div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="badge">
+      <div class="badge-num">✓</div>
+      <div class="badge-txt">No jet<br>washing</div>
+    </div>
+  </div>
+</div>
+
+<div class="label">AD 4 — Storm damage</div>
+<div class="ad ad4">
+  <div class="left">
+    <div>
+      <div class="co-icon">🏠</div>
+      <div class="co-name">M.W.Pyle Roofing</div>
+    </div>
+    <div class="main-text">
+      <div class="headline">Storm damage to<br>your roof? Call Jamie<br>on 07866 611139.</div>
+      <div class="divider"></div>
+      <div class="subtext">We specialise in all kinds of<br>storm damage and are on call<br>for you today.</div>
+    </div>
+    <div>
+      <div class="phone-lbl">Office line</div>
+      <div class="phone">01323 767955</div>
+      <div class="url-bar">www.mwpyleroofing.co.uk</div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="badge">
+      <div class="badge-num">24/7</div>
+      <div class="badge-txt">Emergency<br>call-outs</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
